@@ -3,9 +3,9 @@ const express = require("express");// bring express to here
 const cors = require("cors");// bring here cors
 const connectToDatabase = require("./database/database");//bring here database
 
-const userRoute = require("./users/user.route");//bring here users
-const authRoute = require("./auth/auth.route");//bring here auth
-const tweetsRoute = require("./tweets/tweet.route");//bring here tweets
+const userRoute = require("./users/users.route");//bring here users
+const authRoute = require("./auth/auths.route");//bring here auth
+const tweetsRoute = require("./tweets/tweets.route");//bring here tweets
 const swaggerRoute = require("/swagger/swagger.route");//bring here swagger
 
 const port = process.env.PORT || 3001;// we will use door number 3001 because door number 3000 is from frontend. 
@@ -22,5 +22,5 @@ app.use("/api-docs",swaggerRoute);
 
 
 app.listen(port, () => {
-console.log(`Serve working in the door: ${port}`);
-})
+console.log(`Serve working in the door: ${port}`);// it will show us in the terminal wich door we are using
+});
