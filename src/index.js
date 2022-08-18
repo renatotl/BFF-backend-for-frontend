@@ -13,7 +13,7 @@ const app = express();// app will receve express
 
 connectToDatabase();// it will connect to database at begin 
 app.use(cors());
-app.use(express.json());//our backend will recognize json
+app.use(express.json());//our backend will recognize json. For exemple when we send information throw Thunder Client by json
 
 app.use("/users",userRoute);
 app.use("/auth",authRoute);
