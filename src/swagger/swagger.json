@@ -1,1 +1,125 @@
-{}
+{
+  "openapai": "3.0.0",
+  "info": {
+    "titulo": "API mario tweet",
+    "description": "API do clone do Tweet",
+    "contact": {
+      "email": "renatotloutlook.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "",
+      "description": "API no Heroku"
+    },
+    {
+      "url": "http://localhost:3001",
+      "description": "API local"
+    }
+  ],
+  "paths": {
+    "/users/create": {
+        "post": {
+            "summary": "Create a new user",
+            "description":"Route responsible to create a new user",
+            "tags": ["Users"],
+            "requestBody": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#components/schemas/Users"
+                        },
+                        "exemples": {
+                            "Users": {
+                                "value":"Thi.code",
+                                "username":"Bean",
+                                "email": "mrthi@bean.com",
+                                "password": "12345",
+                                "avatar": ""
+                            }
+                        }
+                    }
+                }
+            },
+            "response": {
+                "400": {
+                    "description": "Not found!"
+                },
+                "201": {
+                    "description": "Created",
+                    "content": {
+                        "application/json": {
+                            "schemma":{
+                                "type": "object",
+                                "$ref": "#components/schemas/User"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "/users": {
+        "get": {
+            "summary": "Find all users",
+            "description": "Route responsible to find all users",
+            "tags": ["Users"],
+            "responses": {
+                "400": {
+                    "description": "Not found"
+                },
+                "200": {
+                    "description": "Ok",
+                    "content": {
+                        "application/json": {
+                            "shema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#components/schemas/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "/auth/login": {
+        "post": {
+            "summary": "Get inside of Twitter",
+            "description": "Route responsible to do login of a user",
+            "tags": ["Auth"],
+            "requestBody": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#components/schemas/User"
+                        },
+                        "examples": {
+                            "User": {
+                                "value": {
+                                    "email": "teste@teste.com",
+                                    "password": "000"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "400": {
+                    "description": "Not found"
+                },
+                "200": {
+                    "description": "Ok"
+                }
+            }
+        }
+    },
+    "/tweets/create":{
+        
+    }
+
+  }
+}
