@@ -5,4 +5,4 @@ const userController = require("./users.controller");// bring our users.controll
 route.post("/create", userController.createUserController);
 route.get("/",userController.findAllUserController);
 
-module.exports - route;
+module.exports = route;

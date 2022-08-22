@@ -2,7 +2,7 @@ const mongoose = require('mongoose');// import mongoose to here
 
 const bcrypt = require("bcryptjs");//  our password will be crypted
 
-const UserSchema = new mongoose.Shema({
+const UserSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
