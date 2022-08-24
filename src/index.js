@@ -26,3 +26,6 @@ app.listen(port, () => {
 
 //localhost:3001
 //swagger: http://localhost:3001/api-docs/
+
+//user text: mrthi@bean.com 
+// password: 12345

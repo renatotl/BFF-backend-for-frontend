@@ -15,7 +15,7 @@ const createUserController = async (req, res) => {
   }
   //We will do a validation so that the user does not try to create an account with an email already registered. We invoke a service function that will fetch the given email from the database:
 
-  const foundUser = await userService.findByEmailUserService(email); // it comes from service
+  const foundUser = await userService.findByEmailUsersService(email); // it comes from service
   if (foundUser) {
     //if there exist any user that comes from service
     return res.status(400).send({
@@ -25,7 +25,7 @@ const createUserController = async (req, res) => {
   }
   //if the user do not existe so create one
   const user = await userService
-    .createUserService(req, body)
+    .createUsersService(req,body)
     .catch((err) => console.log(err.message));
 
   if (!user) {
