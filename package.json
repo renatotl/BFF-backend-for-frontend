@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/renatotl/twitter-backend-for-front.git"
+    "url": "git+https://github.com/renatotl/api-backend-for-front.git"
   },
   "author": "Renato Tenório Lino",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/renatotl/twitter-backend-for-front/issues"
+    "url": "https://github.com/renatotl/api-backend-for-front/issues"
   },
-  "homepage": "https://github.com/renatotl/twitter-backend-for-front#readme",
+  "homepage": "https://github.com/renatotl/api-backend-for-front#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",

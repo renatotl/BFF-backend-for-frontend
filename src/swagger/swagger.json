@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://api-bff-characters.herokuapp.com",
       "description": "API no Heroku"
     },
     {
@@ -36,7 +36,7 @@
                   "username": "Bean",
                   "email": "mrthi@bean.com",
                   "password": "12345",
-                  "avatar": ""
+                  "avatar": "http://static.minilua.com/wp-content/uploads/2015/01/writingasiplease.wordpress.com-rowan-atkinson-not-the-nine-oclock-news-star-at-the-north-community-centre-london-april-1980-610x458-600x450.jpg"
                 }
               }
             }

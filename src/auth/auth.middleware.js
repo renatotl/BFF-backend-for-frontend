@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
 
   if (!authHeader) {
     return res.status(401).send({
-      message: "The token didn't ind!",
+      message: "The token not found!",
     });
   }
 

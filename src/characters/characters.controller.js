@@ -43,7 +43,24 @@ const deleteCharacterController = async (req, res) => {
 };
 
 const searchCharacterController =   async (req,res) => {
-  
+  const  characterr  = req.query;
+
+  const character = await charactersService.searchCharacterService(characterr);
+
+  if (character.length === 0) {
+    return res
+      .status(400)
+      .send({ message: "Character do not exist!" });
+  }
+  return res.send({
+    character: character.map((character) => ({
+      
+            id: character._id,// mandando o id do tweet 
+            name: character.user.name,// mandando o name do usuario
+            avatar: character.user.avatar,// mandando a foto do usuário
+          })),
+        })
+
 }
 
 module.exports = {
