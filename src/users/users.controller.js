@@ -53,7 +53,7 @@ const createUserController = async (req, res) => {
 
 // All user's route
 const findAllUserController = async (req, res) => {
-  const users = await userService.findAllUserService();
+  const users = await userService.findAllUsersService();
 
   if (users.length === 0) {
     return res.status(400).send({
