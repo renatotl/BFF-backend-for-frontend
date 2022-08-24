@@ -359,10 +359,13 @@
       "Character": {
         "type": "object",
         "properties": {
+          "user": {
+            "type": "string"
+          },
           "name": {
             "type": "string"
           },
-          "imagemURL": {
+          "imageURL": {
             "type": "string"
           }
         }

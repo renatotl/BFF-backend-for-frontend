@@ -7,6 +7,9 @@ const CharactersSchema = new mongoose.Schema({
     ref: 'User', // references the user table
     required: true,
   },
+  name: {
+     type: String,
+  },
   imageURL: {
     type: String,
     required: true,
