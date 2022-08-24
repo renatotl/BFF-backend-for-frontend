@@ -7,7 +7,7 @@ const loginService = (email) =>
 
 //token function. SING asks for 3 parameters the 1st is the Id, SECRET will hide it. The espire is that it will expirate one day has 86400 seconds
 const generateToken = (userId) => {
-  return jwt.sign({ id: userId }, proces.env.SECRETE, { expiresIn: 86400 });
+  return jwt.sign({ id: userId }, process.env.SECRET, { expiresIn: 86400 });
 };
 
 module.exports = { loginService, generateToken };
