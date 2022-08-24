@@ -5,7 +5,7 @@ const connectToDatabase = require('./database/database'); //bring here database
 
 const userRoute = require('./users/users.route'); //bring here users
 const authRoute = require('./auth/auth.route'); //bring here auth
-const tweetsRoute = require('./tweets/tweets.route'); //bring here tweets
+const charactersRoute = require('./characters/characters.route'); //bring here characters
 const swaggerRoute = require('./swagger/swagger.route'); //bring here swagger
 
 const port = process.env.PORT || 3001; // we will use door number 3001 because door number 3000 is from frontend.
@@ -17,7 +17,7 @@ app.use(express.json()); //our backend will recognize json. For exemple when we 
 
 app.use('/users', userRoute);
 app.use('/auth', authRoute);
-app.use('/tweets', tweetsRoute);
+app.use('/characters', charactersRoute);
 app.use('/api-docs', swaggerRoute);
 
 app.listen(port, () => {
@@ -25,3 +25,4 @@ app.listen(port, () => {
 });
 
 //localhost:3001
+//swagger: http://localhost:3001/api-docs/
