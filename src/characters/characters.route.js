@@ -6,7 +6,7 @@ const authMiddleware = require('../auth/auth.middleware'); // only who is logged
 //we call the authenticator first and then controller
 router.get('/', charactersController.findAllCharactersController);
 router.post('/create', authMiddleware, charactersController.createCharacterController);
-router.get('/', authMiddleware, charactersController.findCharacterByIdController);
+router.get('/find/id', authMiddleware, charactersController.findCharacterByIdController);
 router.put("/update/id",authMiddleware,charactersController.updateCharacterController);
 router.delete("/delete/id",authMiddleware,charactersController.deleteCharacterController);
 router.get('/search', authMiddleware, charactersController.searchCharacterController);
