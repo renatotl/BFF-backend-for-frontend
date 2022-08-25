@@ -4,7 +4,7 @@ const charactersController = require('./characters.controller'); // where is the
 const authMiddleware = require('../auth/auth.middleware'); // only who is logged in will be able to create a new character
 
 //we call the authenticator first and then controller
-router.get('/All-Characters', charactersController.findAllCharactersController);
+router.get('/', charactersController.findAllCharactersController);
 router.post('/create', authMiddleware, charactersController.createCharacterController);
 router.get('/', authMiddleware, charactersController.findCharacterByIdController);
 router.put("/update/id",authMiddleware,charactersController.updateCharacterController);

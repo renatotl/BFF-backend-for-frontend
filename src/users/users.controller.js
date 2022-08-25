@@ -25,7 +25,7 @@ const createUserController = async (req, res) => {
   }
   //if the user do not existe so create one
   const user = await userService
-    .createUsersService(req,body)
+    .createUsersService(req.body)
     .catch((err) => console.log(err.message));
 
   if (!user) {
@@ -36,12 +36,11 @@ const createUserController = async (req, res) => {
     });
   }
 
-  const token = authService.generateToken(user, id);
+  const token = authService.generateToken(user.id);
 
   res.status(201).send({
     user: {
       id: user,
-      id,
       name,
       username,
       email,
