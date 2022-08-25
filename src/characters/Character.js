@@ -5,7 +5,7 @@ const CharactersSchema = new mongoose.Schema({
     // who is logged in // relating table in mongoose
     type: mongoose.Schema.Types.ObjectId, // user id
     ref: 'User', // references the user table
-    required: true,
+    // required: true,
   },
   name: {
      type: String,

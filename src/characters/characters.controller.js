@@ -19,11 +19,25 @@ const findCharacterByIdController = async (req, res) => {
 };
 
 const createCharacterController = async (req, res) => {
-  const character = req.body;
-  const newCharacter = await charactersService.createCharacterService(
-    character,
-  );
-  res.status(201).send(newCharacter);
+  try {
+    console.log(req.body)
+    const  newCharacter  = req.body;// recebendo a message de forma desistruturada trazendo so a message do body
+console.log(newCharacter)
+    if (!newCharacter) {// validando se a message existe
+      res.status(400).send({
+        message: "Envie todos os dados necessário para a criação do tweet",
+      });
+    }
+// pegando o id do ususario logado e pegando na requisição o userId
+    const { id } = await charactersService.createCharacterService(message, req.userId);
+// estamos dentro de um try e precisamos de um return
+    return res.send({
+      message: "Tweet criado com sucesso!",
+    user: { id, message },
+    });
+  } catch (err){
+    res.status(500).send({ message: err.message });
+  }
 };
 
 const updateCharacterController = async (req, res) => {

@@ -10,9 +10,9 @@ const findCharacterByIdServicer = async (idParams) => {
   return character;
 };
 
-const createCharacterService = async (newCharacter) => {
-  const characterCreated = await Characters.create(newCharacter);
-  return characterCreated;
+const createCharacterService = async (newCharacter,userId) => {// o mongodb não monja uma table com outra é necessário fazer manualmente neste caso a o {user:} relacionamento de tabelas
+  await Characters.create({newCharacter, user: userId});
+ 
 };
 
 const updateCharacterService = async (id, characterEdited) => {
