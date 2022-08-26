@@ -11,14 +11,16 @@ const findAllCharactersController = async (req, res) => {
 };
 
 const findCharacterByIdController = async (req, res) => {
-
-  const idParams = req.params.id;
-  const chooseCharacters = await charactersService.findCharacterByIdServicer(
-    idParams
-  );
-  res.send(chooseCharacters);
- 
-};
+  try { 
+   const idParams = req.params.id;
+   const chooseCharacters = await charactersService.findCharacterByIdServicer(
+     idParams
+   );
+   res.send(chooseCharacters);
+  } catch(err) {
+   res.status(500).send({ message: err.message });
+ }
+ };
 
 const createCharacterController = async (req, res) => {
   const character = req.body;
