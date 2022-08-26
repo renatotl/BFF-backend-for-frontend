@@ -22,11 +22,13 @@ const createCharacterService = async (newCharacter) => {
 
 
 const updateCharacterService = async (id, characterEdited) => {
+
   const characterUpdate = await Characters.findByIdAndUpdate(
     id,
     characterEdited,
   );
   return characterUpdate;
+  
 };
 
 const deleteCharacterService = async (id) => {

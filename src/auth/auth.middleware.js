@@ -7,8 +7,9 @@ const { findByIdUserService } = require('../users/users.service');
 exporting an anonymous function Let's do a little different exporting the middleware function compared to the other functions we've created. Instead of naming the function and exporting it later, let's create it anonymously inside module.exports. It's another way of working with modularization: */
 
 module.exports = (req, res, next) => {
+  
   const authHeader = req.headers.authorization;
-
+  console.log(authHeader)
   if (!authHeader) {
     return res.status(401).send({
       message: "The token not found!!",
