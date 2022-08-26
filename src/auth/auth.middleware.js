@@ -9,7 +9,6 @@ exporting an anonymous function Let's do a little different exporting the middle
 module.exports = (req, res, next) => {
   
   const authHeader = req.headers.authorization;
-  console.log(authHeader)
   if (!authHeader) {
     return res.status(401).send({
       message: "The token not found!!",
