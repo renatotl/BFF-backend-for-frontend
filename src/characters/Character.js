@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const CharactersSchema = new mongoose.Schema({
   user: {
     // who is logged in // relating table in mongoose
-    type: String, //mongoose.Schema.Types.ObjectId, // user id
-   // ref: 'User', // references the user table
-   // required: true,
+    type:mongoose.Schema.Types.ObjectId, // user id
+    ref: 'User', // references the user table
+    required: false,
   },
   name: {
      type: String,
