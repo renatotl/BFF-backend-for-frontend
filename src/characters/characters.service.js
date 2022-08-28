@@ -35,18 +35,9 @@ const deleteCharacterService = async (id) => {
   return await Characters.findByIdAndDelete(id);
 };
 
-const searchCharacterService = async(req,res) => Characters.find({
-  character: { $regex: `${req || ""}`, $options: "i" },
-})//regex é mongpdb puro dentro do backend/ o "i"  ele ignora letra maiuscula eminiscula isso é case senssitive
-.sort({ _id: -1 })
-.populate("user")
-
-
-
-// NIN eu quero saber se os "likes.userId" se nenhum usuário conector oucriou alguma coisa. se o usuário já não deu like nesse tweet
-
-
-
+const searchCharacterService = async (name) => {
+  return await Characters.findOne({ name: name });
+};
 
 module.exports = {
   findAllCharactersService,

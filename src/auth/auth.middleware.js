@@ -36,7 +36,7 @@ module.exports = (req, res, next) => {
       return res.status(401).send({ message: 'Invalid token!' });
     }
     //sending a user id to the route request (decoded.id)
-    req.userId = user.id;
+    req.userId = user._id;
 
     return next();
   });
