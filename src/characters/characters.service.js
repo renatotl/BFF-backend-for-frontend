@@ -44,24 +44,9 @@ const searchCharacterService = async(req,res) => Characters.find({
 
 
 // NIN eu quero saber se os "likes.userId" se nenhum usuário conector oucriou alguma coisa. se o usuário já não deu like nesse tweet
-const likesService = (id, userId) =>  
-Tweet.findOneAndUpdate({// forma correta de contar likes
-    _id: id,
-    "likes.userId": { $nin: [userId]}//varificand se nehum usuario criou algo com esse id como um like
-
-},
-{// Se for o primeiro like, vamos dar um push no array com o id do usuário e a data do like:
-
-  $push: {// criamos o campo likes:
-      likes: { userId, created: new Date() }// registra data que foi dado o like
-  }
-},
-{//E, por fim, precisamos colocar um rawResult: true para o MongoDB retornar o resultado dos procedimentos acima:
 
 
-rawResult: true,// retotna o resultado bruto do mongoDB
-},
-);
+
 
 module.exports = {
   findAllCharactersService,

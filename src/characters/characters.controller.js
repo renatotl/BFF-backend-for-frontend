@@ -48,25 +48,27 @@ const deleteCharacterController = async (req, res) => {
 };
 
 const searchCharacterController =   async (req,res) => {
-  const  characterr  = req.query;
+  const  character  = req.query;
 
-  const character = await charactersService.searchCharacterService(characterr);
+  const searchCharacter = await charactersService.searchCharacterService(character);
 
   if (character.length === 0) {
     return res
       .status(400)
       .send({ message: "Character do not exist!" });
   }
-  return res.send({
-    character: character.map((character) => ({
-      
-            id: character._id,// mandando o id do tweet 
-            name: character.user.name,// mandando o name do usuario
-            avatar: character.user.avatar,// mandando a foto do usuário
-          })),
-        })
-
+  return res.status(200).send(searchCharacter)
 }
+
+// const searchCharacterController = async (name, username) => {
+//   const charactersFound = await Character.find({ name: { $regex: '.*' + name + '.*' }, username: username });
+
+//   if (!charactersFound) {
+//       return { found: false, characters: null, message: 'Nenhum personagem foi encontrado!' };
+//   };
+
+//   return { found: true, characters: charactersFound, message: null };
+// };
 
 module.exports = {
   findAllCharactersController,
