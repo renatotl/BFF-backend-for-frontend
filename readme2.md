@@ -1,3 +1,0 @@
-Para faser o teste ao criar um character, achar por id, atualiza, ou deletar. Precisamso primeiro fazer o login e copiamos o token gerado e vamos lá no create character(a gente está falando do thunder client) vamos no header e escrever authorization Http Headers no valor escrever: Bearer (colar o token aqui).
-Tinhamos excluido antes os itens que lá já existiam. 
-já o token ou id do character colocamos na parte de cima na rota 

@@ -36,7 +36,9 @@ const deleteCharacterService = async (id) => {
 };
 
 const searchCharacterService = async (name) => {
-  return await Characters.findOne({ name: name });
+  console.log(name)
+  return await Characters.findOne(name);
+
 };
 
 module.exports = {
