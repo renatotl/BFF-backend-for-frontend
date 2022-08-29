@@ -65,7 +65,7 @@ const deleteCharacterController = async (req, res) => {
 
 const searchCharacterController =   async (req,res) => {
   try {
-  const  character  = req.query;
+  const  character  = req.query.name;
 
   const searchCharacter = await charactersService.searchCharacterService(character);
 
