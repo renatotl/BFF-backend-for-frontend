@@ -8,7 +8,7 @@ const findAllCharactersController = async (req, res) => {
       .status(404)
       .send({ message: 'There are no characters registered!' });
   }
-  res.send(allCharacters);
+  res.status(200).send(allCharacters);
 } catch (err) {
   res.status(404).send({ message: "Error getting characters" });
 }
@@ -20,9 +20,9 @@ const findCharacterByIdController = async (req, res) => {
    const chooseCharacters = await charactersService.findCharacterByIdServicer(
      idParams
    );
-   res.send(chooseCharacters);
+   res.status(200).send(chooseCharacters);
   } catch(err) {
-   res.status(500).send({ message: err.message });
+   res.status(400).send({ message: err.message });
  }
  };
 
@@ -47,7 +47,7 @@ const updateCharacterController = async (req, res) => {
     idParams,
     characterEditi,
   );
-  res.send(chosenCharacter);
+  res.status(200).send(chosenCharacter);
 } catch (err) {
   res.status(400).send({ message: "Error updating character" });
 }

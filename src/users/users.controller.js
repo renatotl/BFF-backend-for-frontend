@@ -2,6 +2,7 @@ const userService = require('./users.service'); //bring to here our users.servic
 const authService = require('../auth/auth.service'); // bring to here our auth.service
 
 const createUserController = async (req, res) => {
+  
   // doing create
   const { name, username, email, password, avatar } = req.body; //we make a const by destructuring our fields
 
@@ -9,9 +10,9 @@ const createUserController = async (req, res) => {
   if (!username || !name || !email || !password || !avatar) {
     //if you don't have any of these
     //400 status is bad reuest
-    return res
+     res
       .status(400)
-      .send({ message: 'alguns campos precisam ser preenchidos!' });
+      .send({ message: 'alguns campos precisam ser preenchidos!' })   
   }
   //We will do a validation so that the user does not try to create an account with an email already registered. We invoke a service function that will fetch the given email from the database:
 
@@ -60,7 +61,7 @@ const findAllUserController = async (req, res) => {
     });
   }
 
-  res.send(users);
+  res.status(200).send(users);
 };
 
 module.exports = {
